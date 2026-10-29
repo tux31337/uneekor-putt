@@ -1,0 +1,52 @@
+Putting Lab vegetation prototype — asset sources and licenses
+Created: 2026-10-27
+
+EXTERNAL SINGLE-TREE PROTOTYPE (ADDED AFTER THE ORIGINAL A/B STUDY)
+Asset: Tree Small 02 by Rico Cilliers / Poly Haven, CC0-1.0.
+Source: https://polyhaven.com/a/tree_small_02
+Publisher license: https://polyhaven.com/license
+Files: external/tree-small-02/tree-small-02.glb
+Full download checksums and conversion record: external/tree-small-02/provenance.json
+Asset notice: external/tree-small-02/LICENSE.txt
+The generated assets below are separate from this acquired external model.
+
+ORIGINAL VEGETATION ASSETS
+Files: models/*.glb, atlases/*.png, forest-clusters.png, manifest.json
+Source: Original geometry and imagery authored in this project for this prototype.
+Generator: src/scene/vegetation/TreeModels.ts
+Export: scripts/generate-vegetation.mjs
+Image bake and forest composition: scripts/bake-vegetation.mjs
+No downloaded tree models, tree photographs, commercial game assets, or AI image
+generation outputs are included in these vegetation assets.
+
+License for the original asset files listed above: CC0-1.0.
+To the extent copyright or related rights attach to these original asset files,
+they are dedicated to the public domain under CC0 1.0 Universal.
+Canonical license: https://creativecommons.org/publicdomain/zero/1.0/
+Legal code: https://creativecommons.org/publicdomain/zero/1.0/legalcode
+This asset dedication does not relicense the application source, dependencies,
+screenshots of the application, or any pre-existing assets.
+
+SIX FORMS
+spreading-oak, leaning-linden, multi-stem-birch, low-field-maple,
+open-vase-elm, windswept-pine.
+The names describe the intended silhouettes, not botanical scans.
+Each form has 8 azimuth images and elevation images at 0, 30, 60, 90 degrees.
+The four forest silhouettes are compositions of these original whole-tree bakes.
+
+EXISTING TURF (UNCHANGED)
+Grass 004 by ambientCG, CC0-1.0.
+Source: https://ambientcg.com/view?id=Grass004
+Existing notice: src/assets/turf/LICENSE.txt
+License reference: https://docs.ambientcg.com/license/
+
+TOOLS AND TECHNICAL REFERENCES (NOT TREE ASSET SOURCES)
+Three.js: MIT; see node_modules/three/LICENSE.
+@drawcall/webgl: MIT; offline CPU rasterizer only, not bundled into the app.
+Sharp: Apache-2.0; offline image composition only.
+Their code is not included in the GLB geometry or PNG imagery.
+Billboard technique: https://threejs.org/manual/pages/billboards.html
+Android material guidance: https://developer.android.com/games/optimize/materials
+
+The offline screenshots and turntable GIFs are visual references, not browser or
+mobile hardware captures. No device frame-rate claim is made by these assets.

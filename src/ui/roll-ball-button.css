@@ -1,0 +1,11 @@
+.roll-ball-button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:132px;min-height:46px;padding:11px 17px;border:1px solid #31593b;border-radius:8px;background:#31593b;color:#f6faef;font:inherit;font-size:13px;font-weight:600;white-space:nowrap;cursor:pointer;flex-shrink:0}
+.roll-ball-button:hover:not(:disabled){background:#24462e;border-color:#24462e}
+.roll-ball-button:focus-visible{outline:3px solid #a2bf83;outline-offset:3px}
+.roll-ball-button:disabled{opacity:.5;cursor:wait}
+@media(max-width:530px){
+  .playback-panel .playback-main{display:grid;grid-template-columns:minmax(0,1fr) 44px 56px;gap:8px}
+  .playback-main>.roll-ball-button{grid-column:1;grid-row:1;min-width:0;width:100%}
+  .playback-main>.reset-button{grid-column:2;grid-row:1}
+  .playback-main>.rate-control{grid-column:3;grid-row:1}
+  .playback-main>.playback-title{grid-column:1/-1;grid-row:2;min-width:0}
+}

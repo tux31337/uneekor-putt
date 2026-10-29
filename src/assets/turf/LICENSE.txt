@@ -1,0 +1,9 @@
+Grass 004 by ambientCG
+Source: https://ambientcg.com/view?id=Grass004
+License: Creative Commons CC0 1.0 Universal
+License reference: https://docs.ambientcg.com/license/
+CC0 legal text: https://creativecommons.org/publicdomain/zero/1.0/legalcode
+
+The color, OpenGL normal and roughness maps are resolution/compression optimized
+copies of Grass004_1K-JPG. No textures or other game assets from GSPro, GAMEDAY
+or GOLFZON are included. Those products were consulted as visual references.

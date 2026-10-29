@@ -1,0 +1,25 @@
+.grass-review { max-width: 1200px; margin: 0 auto; padding: 32px 28px 72px; color: #243625; }
+.grass-review > a { color: #48654d; font-size: 14px; text-decoration: none; }
+.grass-review header { max-width: 720px; margin: 48px 0 28px; }
+.grass-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: .2em; color: #6b805a; }
+.grass-review h1 { font-size: clamp(28px, 4vw, 44px); line-height: 1.2; margin: 12px 0; letter-spacing: -.04em; }
+.grass-review p { line-height: 1.7; color: #61705f; font-size: 14px; }
+.grass-controls { display: flex; flex-wrap: wrap; gap: 8px 20px; margin: 20px 0; }
+.grass-controls > div, .grass-playback { display: flex; flex-wrap: wrap; gap: 6px; }
+.grass-review button { min-height: 44px; padding: 9px 14px; border: 1px solid #d4ded0; border-radius: 8px; background: #fbfcf8; color: #4b6247; cursor: pointer; font: inherit; font-size: 13px; }
+.grass-review button[aria-pressed=true] { background: #314c37; border-color: #314c37; color: white; }
+.grass-review button:disabled { opacity: .45; cursor: wait; }
+.grass-live-wrap { background: #e0e7d7; border-radius: 14px; overflow: auto; padding: 16px; }
+.grass-live { margin: auto; overflow: hidden; border-radius: 8px; }
+.grass-live canvas { display: block; }
+.grass-playback { margin-top: 16px; align-items: center; }
+.grass-playback input { width: min(320px, 100%); accent-color: #486448; min-height: 44px; }
+.grass-reference { margin-top: 48px; border-top: 1px solid #d4ded0; padding-top: 24px; }
+.grass-reference h2 { font-size: 22px; }
+.grass-reference figure { margin: 24px 0; }
+.grass-reference figcaption { margin-bottom: 8px; font-size: 13px; font-weight: 600; }
+.grass-reference img { width: 100%; border-radius: 8px; display: block; }
+.grass-captures { display: flex; flex-wrap: wrap; gap: 16px; }
+.grass-captures a { max-width: 320px; font-size: 13px; color: #486448; }
+.grass-captures img { width: 100%; display: block; margin-bottom: 8px; }
+@media (max-width: 650px) { .grass-review { padding: 24px 16px 48px; } .grass-review header { margin-top: 30px; } .grass-live-wrap { padding: 0; margin: 0 -16px; border-radius: 0; } }

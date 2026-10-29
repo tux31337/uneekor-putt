@@ -1,0 +1,10 @@
+# Preserve existing source bytes: regression baselines include SHA-256 hashes.
+# In particular, do not normalize the mixed line endings in protected sources.
+* -text whitespace=cr-at-eol
+
+*.md text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf
+
+# Runtime tree model exceeds the regular Git file size limit.
+public/vegetation/external/tree-small-02/tree-small-02.glb filter=lfs diff=lfs merge=lfs -text

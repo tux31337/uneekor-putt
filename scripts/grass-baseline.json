@@ -1,0 +1,25 @@
+{
+  "captured": "2026-10-28 before grass changes",
+  "unchangedSources": [
+    {
+      "file": "src/scene/CourseEnvironment.ts",
+      "sha256": "07cb1bff61a4b306fa786ac18324e3450304400328efbf947bb3abd6d2ef49d2"
+    },
+    {
+      "file": "src/scene/vegetation/ReferenceTree.ts",
+      "sha256": "6dad10d3d93a761e77ff6b7d04e4600a4f37455e176833ec6e1a17a52c14ec17"
+    },
+    {
+      "file": "src/scene/vegetation/TreeModels.ts",
+      "sha256": "e29db881004a85a98663d7e84d94e376e7419836f56f5790cf91e0fcb9d9aabd"
+    },
+    {
+      "file": "src/core/trajectory.ts",
+      "sha256": "5d07575bd348a29bdfcae788ff3c40fc39d645ece387a969066e0837ca4abc97"
+    },
+    {
+      "file": "src/core/playback.ts",
+      "sha256": "2d4eb6ebf0a3712ba50c7f43af27f3a5485bb469126b6bb2214c4fbc0d057e88"
+    }
+  ]
+}

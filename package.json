@@ -1,0 +1,43 @@
+{
+  "name": "putting-lab",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test src/core/*.test.ts",
+    "verify:render": "node scripts/render-scene.mjs",
+    "verify:details": "node scripts/render-scene.mjs --details && node scripts/render-scene.mjs --details --phone && node scripts/prepare-putting-detail-report.mjs",
+    "verify:grass": "node scripts/render-scene.mjs --grass && node scripts/render-scene.mjs --grass --phone && node scripts/prepare-grass-report.mjs",
+    "verify:grass:refinement": "node scripts/render-scene.mjs --grass --grass-output=grass-refinement-20261028 && node scripts/render-scene.mjs --grass --phone --grass-output=grass-refinement-20261028 && node scripts/prepare-grass-refinement-report.mjs",
+    "verify:grass:depth": "node scripts/render-scene.mjs --grass --grass-output=grass-depth-20261028 && node scripts/render-scene.mjs --grass --phone --grass-output=grass-depth-20261028 && node scripts/prepare-grass-refinement-report.mjs --round=grass-depth-20261028 --previous=grass-refinement-20261028",
+    "assets:vegetation": "node scripts/generate-vegetation.mjs && node scripts/bake-vegetation.mjs",
+    "verify:vegetation": "node scripts/render-scene.mjs --vegetation && node scripts/render-scene.mjs --vegetation --phone && node scripts/prepare-vegetation-report.mjs && node scripts/check-vegetation-artifacts.mjs",
+    "assets:reference-tree": "node scripts/download-reference-tree.mjs && node scripts/prepare-reference-tree.mjs",
+    "verify:tree": "node scripts/render-scene.mjs --tree && node scripts/render-scene.mjs --tree --phone && node scripts/prepare-tree-quality-report.mjs && node --experimental-strip-types scripts/check-tree-quality-artifacts.mjs"
+  },
+  "dependencies": {
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "three": "0.186.1"
+  },
+  "devDependencies": {
+    "@drawcall/webgl": "0.1.0",
+    "@types/node": "26.6.5",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@types/three": "0.186.0",
+    "@vitejs/plugin-react": "6.1.2",
+    "typescript": "7.0.2",
+    "vite": "8.3.5"
+  },
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "overrides": {
+    "@drawcall/webgl": { "sharp": "0.35.5" }
+  }
+}

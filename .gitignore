@@ -1,0 +1,32 @@
+node_modules/
+dist/
+.npm-cache/
+.expo/
+*.local
+*.log
+.env
+.env.*
+!.env.example
+.references/
+.tmp/
+
+# Keep the original before snapshots required by verify:details.
+# Other raw renders stay local; published reports are tracked in public/.
+artifacts/*
+!artifacts/putting-details-20261028/
+artifacts/putting-details-20261028/*
+!artifacts/putting-details-20261028/cpu/
+artifacts/putting-details-20261028/cpu/*
+!artifacts/putting-details-20261028/cpu/desktop/
+!artifacts/putting-details-20261028/cpu/mobile/
+artifacts/putting-details-20261028/cpu/desktop/*
+artifacts/putting-details-20261028/cpu/mobile/*
+!artifacts/putting-details-20261028/cpu/desktop/before/
+!artifacts/putting-details-20261028/cpu/mobile/before/
+
+# Local editor / OS files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+Desktop.ini

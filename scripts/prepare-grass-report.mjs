@@ -1,0 +1,39 @@
+import assert from 'node:assert/strict';
+import { mkdir, readFile, writeFile, copyFile } from 'node:fs/promises';
+import { resolve } from 'node:path';
+import { createRequire } from 'node:module';
+import { pathToFileURL } from 'node:url';
+const require = createRequire(import.meta.url);
+const sharp = (await import(pathToFileURL(require.resolve('sharp', { paths: [resolve('node_modules/@drawcall/webgl')] })).href)).default;
+const root = resolve('artifacts/grass-review'), publicRoot = resolve('public/grass-review');
+await mkdir(publicRoot, { recursive: true });
+const views = { ball: '공 주변', macro: '3mm 잎 근접', edge: '그린 가장자리', 'edge-macro': '프린지·러프 근접', course: '코스 전체', rolling: '재생 중 이동한 공 주변' };
+const reports = {};
+for (const size of ['desktop', 'mobile']) {
+  const report = JSON.parse(await readFile(resolve(root, 'cpu', size, 'verification.json'), 'utf8'));
+  assert.equal(report.metrics.length, 12); assert.equal(report.preservedPuttingAndTrees, true);
+  assert.equal(report.browserCapture, false); assert.equal(report.fps, null); reports[size] = report;
+  for (const view of Object.keys(views)) {
+    const source = resolve(root, 'cpu', size, `${view}-pair.jpg`);
+    const metadata = await sharp(source).metadata();
+    assert.equal(metadata.width, report.resolution[0] * 2); assert.equal(metadata.height, report.resolution[1]);
+    await copyFile(source, resolve(root, `${size}-${view}.jpg`));
+    await copyFile(source, resolve(publicRoot, `${size}-${view}.jpg`));
+  }
+  await copyFile(resolve(root, 'cpu', size, 'verification.json'), resolve(publicRoot, `${size}-verification.json`));
+}
+const html = `<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>잔디 시제품 · 같은 구도 비교</title>
+<style>body{font:15px/1.8 system-ui,sans-serif;background:#f5f7ef;color:#293b29;max-width:1240px;margin:auto;padding:32px 24px 80px}h1{font-size:36px;letter-spacing:-.04em;line-height:1.2}h2{font-size:24px;margin-top:48px}p{max-width:850px;color:#596b54}a{color:#365e3d}img{display:block;width:100%;border-radius:10px}figure{margin:28px 0}figcaption{font-weight:600;margin-bottom:8px}.labels{display:grid;grid-template-columns:1fr 1fr;text-align:center;color:#66765c;font-size:13px;margin-bottom:5px}.badge{color:#647650;font-size:12px;letter-spacing:.16em}table{border-collapse:collapse;width:100%;max-width:900px}td,th{text-align:left;border-bottom:1px solid #d6decd;padding:12px}details{margin:24px 0}summary{cursor:pointer;font-weight:600}@media(max-width:600px){body{padding:24px 12px}h1{font-size:28px}}</style>
+<a href="../?review=grass">실시간 잔디 비교 열기 ↗</a><p class="badge">TURF STUDY · 2026.10.28</p><h1>짧게 깎인 잔디의 결</h1>
+<p>공 주변 반경 1.9m와 그린 가장자리 약 3m 구간의 시제품입니다. 아래는 실제 Three.js 씬을 CPU 어댑터로 렌더한 비교이며, 브라우저 캡처·휴대폰 실측은 아닙니다. 카메라·태양·공·홀·궤적·퍼팅 면·수목을 같은 조건으로 검사했습니다.</p>
+<table><tr><th>항목</th><th>기존</th><th>시제품</th></tr><tr><td>그린 표면</td><td>일반 잔디 사진 반복</td><td>0.25mm 해상도로 생성한 짧은 잎·절단면 색/노멀, 비정렬 샘플 두 개와 mipmap</td></tr><tr><td>가까운 잎</td><td>3–5.5mm 단일 삼각형, 자체 색</td><td>약 3mm, 3개 잎의 포기, 3단 굽힘과 넓이가 남는 잘린 끝, 코스 PBR 조명·그림자</td></tr><tr><td>표현 범위</td><td>카메라 앞 직사각형</td><td>공 주변 1.9m 표면, 가장 가까운 0.46m 입체 잎 + 가장자리 한 구간</td></tr><tr><td>가장자리</td><td>색·사진 크기 차이 위주</td><td>그린 3mm / 프린지 11mm / 러프 30mm, 높이와 실루엣 차이</td></tr><tr><td>잔디 삼각형 예산</td><td>최대 32,000</td><td>최대 216,000 / 중간 118,800 / 성능 우선 54,000 · 실제 FPS는 미측정</td></tr></table>
+<p>비교 관찰: 사진의 길고 뒤엉킨 잎 대비가 줄어 관리된 그린의 균일한 면이 보입니다. 근접에서는 짧은 끝과 공통된 결이 남고, 가장자리에는 더 긴 잎이 올라옵니다. 전체 코스 변화는 제한적입니다. 극근접의 가는 잎과 저해상도에서의 미세 윤곽, 시제품 구간과 기존 표면 사이 전환은 계속 조정할 수 있습니다.</p>
+${['desktop', 'mobile'].map(size => `<h2>${size === 'desktop' ? '가로 960×600' : '세로 390×564 · PC에서 비율만 변경'}</h2>${Object.entries(views).map(([view,label]) => `<figure><figcaption>${label}</figcaption><div class="labels"><span>기존</span><span>시제품</span></div><a href="${size}-${view}.jpg"><img loading="lazy" src="${size}-${view}.jpg" alt="${label} 왼쪽 기존 오른쪽 시제품 CPU 비교"></a></figure>`).join('')}<p><a href="${size}-verification.json">같은 구도·수목·궤적 검증 JSON</a></p>`).join('')}
+<h2>검증 범위와 남은 확인</h2><p>두 비율, 여섯 구도, 두 안의 정지 이미지 24장과 비교 이미지 12장을 생성했습니다. 공이 이동한 뒤의 표면과 잎 위치도 확인합니다. 수목 배치·기하, 퍼팅 면·궤적·좌표·시간·카메라·조명은 양쪽이 같습니다. 수목과 물리 관련 원본 소스의 해시도 작업 전과 일치합니다. 잔디만 보이게 한 렌더에서 태양 밝기 및 시험용 차폐물의 그림자에 반응하는지 검사했습니다.</p>
+<p>브라우저 창 접근 승인이 시간 초과되어 자동 UI 검증은 미완료입니다. Android/iOS 실기기 FPS·GPU 시간은 미측정입니다. 추가 색·노멀 텍스처의 mipmap 포함 메모리는 약 10.7MiB이며 잔디 삼각형도 늘었습니다. 실기기 측정 뒤 밀도와 해상도를 조정해야 합니다. 나무 자산·배치와 작은 나무 21그루 제거 상태는 유지했습니다. 퍼팅은 기존 5.15초 샘플이며 실제 물리 계산이 아닙니다.</p></html>`;
+await writeFile(resolve(root, 'index.html'), html); await writeFile(resolve(publicRoot, 'index.html'), html);
+for (const size of ['desktop', 'mobile']) await copyFile(resolve(publicRoot, `${size}-verification.json`), resolve(root, `${size}-verification.json`));
+const status = { cpuStills: 24, comparisonImages: 12, layouts: ['960x600','390x564'], browserCapture: false, physicalMobileDevice: false, fps: null,
+  sameCameraLightingTreesAndShot: true, sourceHashesVerified: true, browserBlocker: 'Computer Use app approval timed out' };
+await writeFile(resolve(root, 'status.json'), JSON.stringify(status, null, 2) + '\n');
+console.log('Grass report: verified 24 CPU stills, 12 paired images and both invariant reports; copied to public/grass-review.');

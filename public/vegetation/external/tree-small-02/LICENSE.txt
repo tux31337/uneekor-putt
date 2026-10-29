@@ -1,0 +1,12 @@
+Tree Small 02
+Author: Rico Cilliers
+Publisher: Poly Haven
+Source: https://polyhaven.com/a/tree_small_02
+License: CC0 1.0 Universal
+https://polyhaven.com/license
+https://creativecommons.org/publicdomain/zero/1.0/legalcode
+Free for commercial use, modification and redistribution. Attribution is appreciated by the publisher.
+
+Original geometry, UVs and normals preserved. Original 2K leaf alpha joined to diffuse. Alpha mask 0.45; original ARM red channel used as AO (leaves 0.65, wood 0.85). Embedded as GLB.
+
+Original download hashes and URLs: provenance.json

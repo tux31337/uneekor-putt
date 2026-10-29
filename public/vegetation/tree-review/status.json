@@ -1,0 +1,85 @@
+{
+  "scope": "One external tree quality prototype, no quality approval inferred",
+  "model": "https://polyhaven.com/a/tree_small_02",
+  "author": "Rico Cilliers",
+  "license": "CC0-1.0",
+  "position": [
+    -11,
+    0.5510523921150341,
+    27
+  ],
+  "displayedHeight": 10.420004816055298,
+  "uniformScale": 2.2867230976048867,
+  "sourceNativeHeight": 4.556740965694189,
+  "triangles": 2062487,
+  "bytes": 117186380,
+  "browserCaptures": [],
+  "browserCaptureStatus": "blocked: Windows Computer Use could not verify the current Chrome URL",
+  "cpuReference": {
+    "stills": 24,
+    "turntables": 4,
+    "framesPerTurntable": 33,
+    "resolution": [
+      [
+        960,
+        600
+      ],
+      [
+        390,
+        564
+      ]
+    ]
+  },
+  "realDeviceFps": null,
+  "performanceOptimization": "deferred",
+  "preserved": [
+    "ball, cup and flag positions",
+    "trajectory coordinates, heights and timestamps",
+    "putting heightAt and slope calculations",
+    "gameplay camera presets"
+  ],
+  "limitations": [
+    "Original asset has no exposed root network",
+    "Fine foliage can alias at fixed DPR 1",
+    "Surrounding trees remain previous generated prototypes",
+    "Browser, React layout and device FPS remain unverified"
+  ],
+  "validation": {
+    "coreTests": {
+      "passed": 10,
+      "failed": 0
+    },
+    "typecheck": "passed",
+    "productionBuild": "passed",
+    "sceneRegression": {
+      "desktop": [
+        960,
+        600
+      ],
+      "portrait": [
+        390,
+        564
+      ],
+      "distanceMeters": [
+        2,
+        12
+      ],
+      "slopePercent": [
+        -5,
+        5
+      ],
+      "puttingPlaneAndProviderCoordinatesAndTiming": "preserved",
+      "playbackAndQualityRetention": "passed"
+    },
+    "artifacts": {
+      "pngStills": 24,
+      "cpuTurntables": 4,
+      "framesPerTurntable": 33,
+      "reportLinks": 67,
+      "sourceGeometryHash": "verified",
+      "framing": "sampled vertices checked at all 33 angles, both resolutions"
+    },
+    "browserCapture": "unavailable: current Chrome URL could not be verified",
+    "deviceFps": "not measured"
+  }
+}

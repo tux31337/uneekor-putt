@@ -1,0 +1,115 @@
+{
+  "round": "grass-refinement-20261028",
+  "comparison": "previous prototype / refined prototype",
+  "backend": "CPU / @drawcall/webgl / Mesa lavapipe",
+  "browserCapture": false,
+  "physicalMobileDevice": false,
+  "fps": null,
+  "browserBlocker": "Automatic approval review rejected reading an unrelated private Chrome window; no connected task browser available",
+  "originalReportPreserved": true,
+  "unchangedLegacyPixels": true,
+  "sameCameraShotAndTrees": true,
+  "grassTriangleBudgets": [
+    216000,
+    118800,
+    54000
+  ],
+  "checks": [
+    {
+      "size": "desktop",
+      "view": "ball",
+      "sameCameraShotAndTrees": true,
+      "unchangedLegacyPixels": true,
+      "previousPrototypeSha256": "8c2c69521b23b189825f90cc3f29b8dda026030d8a5edc655f9511612be3053f",
+      "refinedPrototypeSha256": "87a7b0e36d7e7eec17000a837498c644ee5a5624481e6965369f63b0b4955a75"
+    },
+    {
+      "size": "desktop",
+      "view": "macro",
+      "sameCameraShotAndTrees": true,
+      "unchangedLegacyPixels": true,
+      "previousPrototypeSha256": "8c731bbbbb8d491ac4e6ab04b4b1a363100f1d95835bab04ef610209d635fac8",
+      "refinedPrototypeSha256": "769214832b2f0682edf2e542a0ac8283221ff458de4dfc0633f3bcd13c8168c3"
+    },
+    {
+      "size": "desktop",
+      "view": "edge",
+      "sameCameraShotAndTrees": true,
+      "unchangedLegacyPixels": true,
+      "previousPrototypeSha256": "ce98f921a5b7088292da319c0d18f49625c124c8e29289154cd2c30ecd720041",
+      "refinedPrototypeSha256": "bb607f9c8d7b2d27df4479a2dc29115b0880e2aa9b256b260a7d62c46c61a744"
+    },
+    {
+      "size": "desktop",
+      "view": "edge-macro",
+      "sameCameraShotAndTrees": true,
+      "unchangedLegacyPixels": true,
+      "previousPrototypeSha256": "09f3c4ec0a23d5ce2a578f84773c6775ab51ea57ecc05ca0ded7684cc2234f65",
+      "refinedPrototypeSha256": "651d8cc60cff27a8bbb60ddc3c7dcb5c526436354e7c5ea04d5f4ed112a47235"
+    },
+    {
+      "size": "desktop",
+      "view": "course",
+      "sameCameraShotAndTrees": true,
+      "unchangedLegacyPixels": true,
+      "previousPrototypeSha256": "427812391c38fcc99cb301e979182aa68a4aa917932fbf84623147f54d2d91da",
+      "refinedPrototypeSha256": "427812391c38fcc99cb301e979182aa68a4aa917932fbf84623147f54d2d91da"
+    },
+    {
+      "size": "desktop",
+      "view": "rolling",
+      "sameCameraShotAndTrees": true,
+      "unchangedLegacyPixels": true,
+      "previousPrototypeSha256": "a369c859a6eb4ef8cfb38e23981ac8f01c5226fccb3ca65c4a1ce61815302c36",
+      "refinedPrototypeSha256": "3ce43a44e28b88562df590a3f2aa26cb7b8346d57bb0e9c816120151fbdf1613"
+    },
+    {
+      "size": "mobile",
+      "view": "ball",
+      "sameCameraShotAndTrees": true,
+      "unchangedLegacyPixels": true,
+      "previousPrototypeSha256": "956f1a33421eae0c1daf30064f441bd50cde85712ed05f55d9f51d5f4d78b82b",
+      "refinedPrototypeSha256": "b7b375b797119537e912f1d2f0756b4c8cf03ce4a54193941c087c8d91154b78"
+    },
+    {
+      "size": "mobile",
+      "view": "macro",
+      "sameCameraShotAndTrees": true,
+      "unchangedLegacyPixels": true,
+      "previousPrototypeSha256": "064d21d6de250ec89b0624ed14efa01e086b7fc128bc85a548f0fa0eaeba2333",
+      "refinedPrototypeSha256": "66aec0ead97c64bde443ccd44cdcc1447d5b99649ffa5a89e0926dd95aa576a5"
+    },
+    {
+      "size": "mobile",
+      "view": "edge",
+      "sameCameraShotAndTrees": true,
+      "unchangedLegacyPixels": true,
+      "previousPrototypeSha256": "b29c286fb29e46bada8b262f6ff1b97dc7d55500fcace33fe05b66bc8512b552",
+      "refinedPrototypeSha256": "661cbe9c391321394cb58b463b19e88cba990f541db773b0e8c29a1fbc5d00f3"
+    },
+    {
+      "size": "mobile",
+      "view": "edge-macro",
+      "sameCameraShotAndTrees": true,
+      "unchangedLegacyPixels": true,
+      "previousPrototypeSha256": "aaa1453a86855e5e8216558b10842b8e4a68a625f09c49ad530470fbb0b6429d",
+      "refinedPrototypeSha256": "e7304db0c0aca6735d104928f0d3cca36a01c503bd770670c0f184c726091e1a"
+    },
+    {
+      "size": "mobile",
+      "view": "course",
+      "sameCameraShotAndTrees": true,
+      "unchangedLegacyPixels": true,
+      "previousPrototypeSha256": "358f4b37346e5cffb51c7cc9bb9694e8ad2219eb2332c6b9cb5004711bc0e250",
+      "refinedPrototypeSha256": "358f4b37346e5cffb51c7cc9bb9694e8ad2219eb2332c6b9cb5004711bc0e250"
+    },
+    {
+      "size": "mobile",
+      "view": "rolling",
+      "sameCameraShotAndTrees": true,
+      "unchangedLegacyPixels": true,
+      "previousPrototypeSha256": "64292fe86bf4dde42d47e2a725140b31c7650ec946ab8f565147a3b1e268ee7f",
+      "refinedPrototypeSha256": "2e77b779d6eb7a9a55e949bf7536dcda811c0bdf0618cbf7bca329c99fb8a536"
+    }
+  ]
+}

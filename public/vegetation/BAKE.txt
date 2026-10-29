@@ -1,0 +1,1 @@
+Original 3D models rendered with @drawcall/webgl CPU adapter. ACES exposure 1.12; same hemisphere and sun as PuttingScene. 6 forms, 8 azimuths and elevations 0/30/60/90 degrees. These bakes are assets, not device performance measurements.

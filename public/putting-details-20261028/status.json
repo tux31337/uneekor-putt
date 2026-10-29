@@ -1,0 +1,78 @@
+{
+  "round": "putting-details-20261028",
+  "backend": "CPU / @drawcall/webgl / Mesa lavapipe",
+  "browserCapture": false,
+  "physicalMobileDevice": false,
+  "fps": null,
+  "browserBlocker": "No connected task browser; unrelated private windows were not accessed",
+  "originalReportsPreserved": true,
+  "grassTriangleBudgets": [
+    216000,
+    118800,
+    54000
+  ],
+  "ballNormalTextureMiBWithMipmaps": 2.6666666666666665,
+  "maximumFlowFps": 30,
+  "checks": [
+    {
+      "size": "desktop",
+      "view": "ball",
+      "cameraBallShotPlaneTreesLightAndGrassBudgetPreserved": true
+    },
+    {
+      "size": "desktop",
+      "view": "macro",
+      "cameraBallShotPlaneTreesLightAndGrassBudgetPreserved": true
+    },
+    {
+      "size": "desktop",
+      "view": "edge",
+      "cameraBallShotPlaneTreesLightAndGrassBudgetPreserved": true
+    },
+    {
+      "size": "desktop",
+      "view": "edge-macro",
+      "cameraBallShotPlaneTreesLightAndGrassBudgetPreserved": true
+    },
+    {
+      "size": "desktop",
+      "view": "course",
+      "cameraBallShotPlaneTreesLightAndGrassBudgetPreserved": true
+    },
+    {
+      "size": "desktop",
+      "view": "rolling",
+      "cameraBallShotPlaneTreesLightAndGrassBudgetPreserved": true
+    },
+    {
+      "size": "mobile",
+      "view": "ball",
+      "cameraBallShotPlaneTreesLightAndGrassBudgetPreserved": true
+    },
+    {
+      "size": "mobile",
+      "view": "macro",
+      "cameraBallShotPlaneTreesLightAndGrassBudgetPreserved": true
+    },
+    {
+      "size": "mobile",
+      "view": "edge",
+      "cameraBallShotPlaneTreesLightAndGrassBudgetPreserved": true
+    },
+    {
+      "size": "mobile",
+      "view": "edge-macro",
+      "cameraBallShotPlaneTreesLightAndGrassBudgetPreserved": true
+    },
+    {
+      "size": "mobile",
+      "view": "course",
+      "cameraBallShotPlaneTreesLightAndGrassBudgetPreserved": true
+    },
+    {
+      "size": "mobile",
+      "view": "rolling",
+      "cameraBallShotPlaneTreesLightAndGrassBudgetPreserved": true
+    }
+  ]
+}
